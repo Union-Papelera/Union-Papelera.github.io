@@ -5,18 +5,18 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Presupuestos oficiales de la Unión Papelera">
+    <meta name="description" content="Verificación de clave PGP y seguridad de la Unión Papelera">
     <meta name="author" content="Unión Papelera">
     <link href="favicon.png" rel="icon">
     <!--<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">-->
 
-    <title>Cuentas Papeleras</title>
+    <title>Seguridad</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- ANALYTICS -->
   <script src="https://cdn.counter.dev/script.js" data-id="49b457cc-f5ad-4183-ae99-ed0266e9fd27" data-utcoffset="0"></script>
   <!-- ANALYTICS -->
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -39,6 +39,7 @@
     <!-- ***** Preloader End ***** -->
 
   <!--HEADER-->
+
   <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
@@ -48,8 +49,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Presupuestos
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">UP
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -71,14 +72,13 @@
             <li class="nav-item">
               <a class="nav-link" href="social/index.html">Social</a>
             </li>
-            <div class="nav-item dropdown">
+            <div class="nav-item dropdown active">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Más</a>
               <div class="dropdown-menu">
-                  <a href="leyes-papeleras.html" class="dropdown-item">Leyes</a>
                   <a href="mcps-comisarios.html" class="dropdown-item">MCPs y gobierno</a>
                   <a href="simbolos-nacionales.html" class="dropdown-item">Símbolos</a>
                   <a href="paperstat.html" class="dropdown-item">PaperStat</a>
-                                    <a href="elecciones.html" class="dropdown-item">Elecciones</a>
+                  <a href="elecciones.html" class="dropdown-item">Elecciones</a>
                   <a href="seguridad.html" class="dropdown-item">Seguridad</a>
               </div>
           </div>
@@ -101,42 +101,52 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1>Cuentas Papeleras</h1>
-            <span>Presupuestos oficiales de la Unión Papelera</span>
+            <h1>Seguridad</h1>
+            <span>Seguridad de la Unión Papelera</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="single-services">
+    <div class="more-info about-info">
       <div class="container">
-        <div class="row" id="tabs">
-          <div class="col-md-4">
-            <ul>
-              <li><a href='#tabs-1'>2022-2023 <i class="fa fa-angle-right"></i></a></li>
-          <!--    <li><a href='#tabs-2'>Derechos Fundamentales <i class="fa fa-angle-right"></i></a></li>
-              <li><a href='#tabs-3'>Empleados <i class="fa fa-angle-right"></i></a></li>
-              <li><a href='#tabs-4'>ONUP <i class="fa fa-angle-right"></i></a></li>
-              <li><a href='#tabs-5'>Juego Papel <i class="fa fa-angle-right"></i></a></li>-->
-            </ul>
-          </div>
-          <div class="col-md-8">
-            <section class='tabs-content'>
-              <article id='tabs-1'>
-                <img src="assets/images/euro.jpg" alt="">
-                <h4>2022-2023</h4>
-                <p>Presupuestos</p>
-                <p>Puedes ver los presupuestos pulsando sobre el botón<p>
-                <br><br>
-                <a href="https://cryptpad.fr/sheet/#/2/sheet/view/m03rvBX3sRoAn6onCj-LT7nDpwVLdbZuoVzErQqZXXw/" class="filled-button">Leela</a>
-              </article>
-            </section>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="more-info-content">
+              <div class="row">
+                <div class="col-md-6 align-self-center">
+                  <div class="right-content">
+                    <span>Seguridad</span>
+                    <h2>Verificar una firma digital de la UP</h2>
+                    <p><ol>
+                      <li>Si aún no lo has hecho descarga e instala <a href="gnupg.org">GnuPG</a>.</li>
+                      <li>Descarga nuestra <a href="assets/docs/clave-pgp.txt">clave PGP pública</a>.</li>
+                      <li>Ve al directorio donde lo has descargado y abre una terminal. Ejecuta  <code>gpg --import clave-pgp.txt</code>
+                        para importar nuestra clave</li>
+                      <li>Ahora ejecuta <code>gpg --fingerprint gobiernopapelero@mailfence.com</code> y comprueba
+                        que sea <a href="assets/docs/fingerprint-de-la-clave-pgp.txt">la nuestra</a>. Si no es, la clave PGP no puede 
+                      ser confiada.</li>
+                      <li>Descarga el archivo que quieras verificar y que esté firmado por la UP, ejecuta <code>gpg --verify archivo-firmado.pdf</code>. 
+                        Debería de decir "Firma correcta" o "Good signature". Si esto no ocurre nosotros no hemos firmado el archivo. Nota: saldrá un aviso de PRECAUCIÓN si no has tomado medidas
+                        específicas para confirar en el camino a nuestra clave.</li>
+                      <li>Es una buena práctica volver a comprobar que las fingerprint coinciden</li>
+                      <li>Nustra clave caduca el 7-1-2025</li>
+                    </ol><br><br>
+                    <a class="filled-button" href="assets/docs/clave-pgp.txt">Clave PGP</a><br><br>
+                    <a class="filled-button" href="assets/docs/fingerprint-de-la-clave-pgp.txt">Fingerprint</a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="left-image">
+                    <img src="assets/images/privacy.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div><br><br>
-
-
+    </div>
     <!-- Footer Starts Here -->
     <footer>
       <div class="container">
@@ -152,7 +162,7 @@
             <h4>Páginas Adicionales</h4>
             <ul class="menu-list">
               <li><a href="leyes-papeleras.html">Leyes Papeleras</a></li>
-              <li><a href="cuentas.html">Pesupuestos</a></li>
+              <li><a href="cuentas.html">Presupuestos</a></li>
               <li><a href="sitemap.xml">Sitemap</a></li>
               <li><a href="privacy.html">Política de privacidad</a></li>
             </ul>
